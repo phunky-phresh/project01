@@ -1,0 +1,9 @@
+.product h3,p {
+  margin: 0;
+  display: inline;
+}
+
+.product:hover {
+  color: white;
+  background-color: black;
+}
