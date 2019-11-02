@@ -3,7 +3,10 @@
 <% @products.each do |product| %>
 
     <div class="product">
-      <%= link_to product.brand, product_path(product.id) %>
+      <%= link_to(product_path(product.id)) do %>
+      <p><%= product.year %></p>
+      <p><%= product.brand %></p>
       <p><%= product.model %></p>
+      <% end %>
     </div>
 <% end %>

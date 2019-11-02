@@ -19,12 +19,12 @@ p3 = Product.create :brand => 'Salomon', :model => 'First Call', :year => '2019'
 p4 = Product.create :brand => 'Yes.', :model => 'Jackpot', :year => '2017', :image => 'https://images.evo.com/imgp/700/105605/457957/yes-jackpot-snowboard-2017-.jpg'
 p5 = Product.create :brand => 'Yes.', :model => '420', :year => '2017', :image => 'https://images.evo.com/imgp/700/105600/457931/yes-420-snowboard-2017-.jpg'
 
-# Review.destroy_all
-# r1 = Review.create :title => 'Deep Thinker Review', :date => '1/11/19', :blog => 'Great board. super fast. agile. hard turning', :rating => '9'
-# r2 = Review.create :title => 'Huck Knife review', :date => '10/11/19', :blog => 'fun in the park. super fast. agile. hard turning', :rating => '9'
-# r3 = Review.create :title => 'Burton Deep Thinker', :date => '1/10/19', :blog => 'too much to handle. super fast. agile. hard turning', :rating => '9'
-# r4 = Review.create :title => 'Salomon First Call', :date => '1/9/19', :blog => 'versitile. super fast. agile. hard turning', :rating => '9'
-# r5 = Review.create :title => 'Yes 420 review', :date => '1/11/19', :blog => 'amazing powder board', :rating => '7'
+Review.destroy_all
+r1 = Review.create :title => 'Deep Thinker Review', :date => '1/11/19', :brief => 'Great board. super fast. agile. hard turning', :rating => '9', :product_id => 6
+r2 = Review.create :title => 'Huck Knife review', :date => '10/11/19', :brief => 'fun in the park. super fast. agile. hard turning', :rating => '9'
+r3 = Review.create :title => 'Burton Deep Thinker', :date => '1/10/19', :brief => 'too much to handle. super fast. agile. hard turning', :rating => '9', :product_id => 6
+r4 = Review.create :title => 'Salomon First Call', :date => '1/9/19', :brief => 'versitile. super fast. agile. hard turning', :rating => '9'
+r5 = Review.create :title => 'Yes 420 review', :date => '1/11/19', :brief => 'amazing powder board', :rating => '7'
 
 # Shape.destroy_all
 # s1 = Shape.create :name => 'Directional', :terrain => 'All-mountain', :image => 'https://www.burton.com/static/content/2019/images/pdp/snowboarding/diagrams/findyourshape-directional-mobile.svg', :brief => 'More nose than tail. better for all mountain riding.'
