@@ -1,2 +1,14 @@
-<h1>Reviews#new</h1>
-<p>Find me in app/views/reviews/new.html.erb</p>
+<h1>Add Review</h1>
+
+<%= form_for @review do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title, :required => true, :autofocus => true %>
+  <%= f.label :date %>
+  <%= f.text_field :date %>
+  <%= f.label :rating %>
+  <%= f.number_field :rating %>
+  <%= f.label :brief %>
+  <%= f.text_area :brief %>
+
+  <%= f.submit %>
+<% end %>

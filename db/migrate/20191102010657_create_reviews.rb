@@ -3,7 +3,7 @@ class CreateReviews < ActiveRecord::Migration[6.0]
     create_table :reviews do |t|
       t.text :title
       t.text :date
-      t.text :rating
+      t.integer :rating
       t.text :brief
       t.integer :product_id
 

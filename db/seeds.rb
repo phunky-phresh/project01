@@ -36,5 +36,7 @@ r5 = Review.create :title => 'Yes 420 review', :date => '1/11/19', :brief => 'am
 # pf = Profile.create :name => 'Traditional Camber', :level => 'Advanced', :image => 'https://www.burton.com/static/content/2019/images/pdp/snowboarding/diagrams/benddetail-camber.svg', :breif => 'The original profile. aggresive, fast, agile. not ideal for beginners'
 
 #####ASSOCIATIONS############
-# puts "Reviews to Users"
-# u1.reviews <<
+puts "Reviews to Users"
+u1.reviews << r1 << r2
+puts "Reviews to Products"
+p1.reviews << r1 << r3
