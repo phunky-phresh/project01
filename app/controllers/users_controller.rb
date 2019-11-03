@@ -12,6 +12,12 @@ class UsersController < ApplicationController
       render :new
     end
   end
+  def index
+    @user = User.find params[:id]
+  end
+  def show
+    @user = User.find @current_user.id
+  end
 
   private
   def user_params
