@@ -13,6 +13,8 @@
     <nav>
       <%= link_to "Home", root_path %>
       <%= link_to "Products", products_path %>
+      <%= link_to "Profiles", profiles_path %>
+      <%= link_to "Shapes", shapes_path %>
       <% if @current_user.present? %>
       <%= link_to "Logout", login_path, :method => 'delete' %>
       <%= link_to "Add Review", new_review_path %>

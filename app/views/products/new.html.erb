@@ -14,7 +14,7 @@
   <%= f.select :profile_id, Profile.pluck(:name, :id), :include_blank => true, :required => true %>
   <%= f.label :image %>
   <%= f.url_field :image %>
-
+  <% :name == "#{:year} #{:brand} #{:model}" %>
 
   <%= f.submit %>
 <% end %>

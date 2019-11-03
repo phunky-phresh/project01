@@ -1,2 +1,7 @@
-<h1>Shapes#show</h1>
-<p>Find me in app/views/shapes/show.html.erb</p>
+<h1><%= @shape.name %> Shapes</h1>
+
+
+<% if @current_user.admin? %>
+  <%= link_to "Edit", edit_shape_path %>
+  <%= button_to "Delete #{@shape.name}", @shape, :method => 'delete', :data => {:confirm => 'Are you sure?'} %>
+  <% end %>
