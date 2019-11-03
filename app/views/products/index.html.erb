@@ -4,7 +4,7 @@
 
     <div class="product">
       <%= link_to(product_path(product.id)) do %>
-      <p><%= product.name %></p>
+      <p><%= product.year %> <%= product.brand %> <%= product.model %></p>
       <% end %>
     </div>
 <% end %>

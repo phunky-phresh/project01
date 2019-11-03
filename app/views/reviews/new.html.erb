@@ -2,8 +2,8 @@
 
 <%= form_for @review do |f| %>
   <%= f.label :product_id %>
-    <%= f.select :product_id, Product.pluck(:name, :id), :include_blank => true %>
-    <%= link_to 'Add', new_product_path %>
+    <%= f.select :product_id, Product.pluck(:name, :id), :include_blank => true, :required => true %>
+  <%= link_to 'Add', new_product_path %>
   <%= f.label :title %>
   <%= f.text_field :title, :required => true, :autofocus => true %>
   <%= f.label :date %>

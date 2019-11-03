@@ -1,14 +1,17 @@
 <h1>Add Product</h1>
 
 <%= form_for @product do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+
   <%= f.label :year %>
-  <%= f.text_field :year %>
+  <%= f.text_field :year, :required => true %>
   <%= f.label :brand %>
-  <%= f.text_field :brand %>
+  <%= f.text_field :brand, :required => true %>
   <%= f.label :model %>
-  <%= f.text_field :model %>
+  <%= f.text_field :model, :required => true %>
+  <%= f.label :shape_id %>
+  <%= f.select :shape_id, Shape.pluck(:name, :id), :include_blank => true, :required => true %>
+  <%= f.label :profile_id %>
+  <%= f.select :profile_id, Profile.pluck(:name, :id), :include_blank => true, :required => true %>
   <%= f.label :image %>
   <%= f.url_field :image %>
 

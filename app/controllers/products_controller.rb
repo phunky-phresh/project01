@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :check_for_login, :only => [:index]
+  # before_action :check_for_login, :only => [:index]
   def index
     @products = Product.all
   end
@@ -17,7 +17,9 @@ class ProductsController < ApplicationController
   end
 
   private
+
   def product_params
-    params.require(:product).permit(:name, :brand, :model, :year, :image)
+    params.require(:product).permit(:brand, :model, :year, :image, :name)
+
   end
 end

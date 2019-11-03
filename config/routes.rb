@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :profiles, :only => [:index, :show, :new, :create]
+  resources :shapes, :only => [:index, :show, :new, :create]
   resources :reviews, :only => [:index, :show, :new, :create]
 
   resources :products, :only => [:index, :show, :new, :create]
