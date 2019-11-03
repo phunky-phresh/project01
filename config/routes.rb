@@ -1,12 +1,7 @@
 Rails.application.routes.draw do
-  # get 'reviews/index'
-  # get 'reviews/new'
-  # get 'reviews/edit'
-  # get 'reviews/show'
-  resources :reviews, :only => [:index, :show, :new]
-  # get 'products/index'
-  # get 'products/show'
-  # get 'session/new'
+
+  resources :reviews, :only => [:index, :show, :new, :create]
+  
   resources :products, :only => [:index, :show]
   # get 'pages/home'
   root :to => 'pages#home'

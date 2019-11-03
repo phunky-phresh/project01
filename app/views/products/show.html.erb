@@ -1,2 +1,14 @@
 <h1><%= @products.model %></h1>
 <h2><%= @products.brand %></h2>
+
+
+  <% @products.reviews.each do |review| %>
+  <div class="review">
+    <h3><%= review.title  %></h3>
+    <ul>
+      <li><%= review.date %></li>
+      <li><%= review.rating %>/10</li>
+    </ul>
+    <p><%= review.brief %></p>
+  </div>
+  <% end %>
