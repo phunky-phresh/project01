@@ -13,11 +13,23 @@ class ReviewsController < ApplicationController
   end
 
   def edit
+    @review = Review.find params[:id]
+  end
+  def update
+    review = Review.find params[:id]
+    review.update review_params
+    redirect_to review_path
   end
 
   def show
+    @review = Review.find params[:id]
   end
 
+  def destroy
+    review = Review.find params[:id]
+    review.destroy
+    redirect_to users_path
+  end
   private
   def review_params
     params.require(:review).permit(:title, :date, :rating, :brief, :product_id, :user_id)

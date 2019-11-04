@@ -3,7 +3,7 @@
   display: inline;
 }
 
-.product:hover {
-  color: white;
-  background-color: black;
+
+.user_id_hide {
+  display: none;
 }

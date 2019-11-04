@@ -18,7 +18,7 @@
       <% if @current_user.present? %>
         <%= link_to "Logout", login_path, :method => 'delete' %>
         <%= link_to "Add Review", new_review_path %>
-        <%= link_to "My Reviews", "/users/#{@current_user.id}" -%>
+        <%= link_to "My Reviews", "/users" -%>
       <% else %>
         <%= link_to "Sign Up", new_user_path %>
         <%= link_to "Log In", login_path %>
