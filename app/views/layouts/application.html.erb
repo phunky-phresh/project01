@@ -5,28 +5,39 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'styles', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <div class="container">
-      <nav>
-        <%= link_to "Home", root_path %>
-        <%= link_to "Products", products_path %>
-        <%= link_to "Profiles", profiles_path %>
-        <%= link_to "Shapes", shapes_path %>
-        <% if @current_user.present? %>
-          <%= link_to "Add Review", new_review_path %>
-          <%= link_to "My Reviews", users_path %>
-          <%= button_to "Logout", login_path, :method => 'delete' %>
-        <% else %>
-          <%= link_to "Sign Up", new_user_path %>
-          <%= link_to "Log In", login_path %>
-        <% end %>
-      </nav>
-      <%= yield %>
-    </div>
+      <header>
+        <nav>
+          |
+            <%= link_to "Home", root_path, :id => "pill-home-tab", :class => "nav-link active" %>
 
+            <%= link_to "Products", products_path, :class => "nav-link", :id => "pill-profile-tab" %>
+            <%= link_to "Profiles", profiles_path, :class => "nav-link", :id => "pill-profile-tab" %>
+            <%= link_to "Shapes", shapes_path, :class => "nav-link", :id => "pill-profile-tab" %>
+          <% if @current_user.present? %>
+            <!-- <li class="nav-item dropdown"> -->
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">User</a>
+              <div class="dropdown-menu">
+                <%= link_to "Add Review", new_review_path, :class => "dropdown-item" %>
+                <%= link_to "My Reviews", users_path, :class => "dropdown-item" %>
+                <div class="dropdown-divider"></div>
+                <%= link_to "Logout", login_path, :method => 'delete', :class => "dropdown-item"  %>
+              </div>
+            <!-- </li> -->
+          <% else %>
+            <%= link_to "Sign Up", new_user_path %>
+            <%= link_to "Log In", login_path %>
+          <% end %>
+          |
+        </nav>
+      </header>
+
+      <%= yield %>
+  </div>
   </body>
 </html>
