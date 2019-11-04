@@ -10,6 +10,7 @@
   <%= f.number_field :rating %>
   <%= f.label :brief %>
   <%= f.text_area :brief %>
-
+    <% f.label :user_id %>
+    <% f.select :user_id, User.pluck(@current_user.id) %>
   <%= f.submit %>
 <% end %>
