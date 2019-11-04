@@ -13,7 +13,7 @@ u1 = User.create :email => 'admin@admin.com', :password => 'chicken', :admin => 
 u2 = User.create :email => 'joebro@joe.com', :password => 'chicken'
 
 Product.destroy_all
-p1 = Product.create :name => '2020 Burton Deep Thinker', :brand => 'Burton', :model => 'Deep Thinker', :year => '2020', :image => 'https://www.tactics.com/a/bhpp/9/burton-deep-thinker-snowboard.jpg'
+p1 = Product.create :name => '2020 Burton Deep Thinker', :brand => 'Burton', :model => 'Deep Thinker', :year => '2020', :image => 'https://images.evo.com/imgp/700/162077/657219/clone.jpg'
 p2 = Product.create :name => '2020 Salomon Huck Knife', :brand => 'Salomon', :model => 'Huck Knife', :year => '2020', :image => 'https://images.evo.com/imgp/700/161947/641530/clone.jpg'
 p3 = Product.create :name => '2019 Salomon First Call', :brand => 'Salomon', :model => 'First Call', :year => '2019', :image => 'https://cdn.shopify.com/s/files/1/1022/9437/products/FirstCall162.jpg?v=1560808575'
 p4 = Product.create :name => '2017 Yes. Jackpot', :brand => 'Yes.', :model => 'Jackpot', :year => '2017', :image => 'https://images.evo.com/imgp/700/105605/457957/yes-jackpot-snowboard-2017-.jpg'
