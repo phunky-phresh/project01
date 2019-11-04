@@ -4,6 +4,7 @@
   <p><%= flash[:error] %></p>
 <% end  %>
 <%# Use a form tag when its not a CRUD system %>
+
 <%= form_tag login_path do%>
   <%= label_tag :email %>
   <%= email_field_tag :email %>

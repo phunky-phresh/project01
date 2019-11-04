@@ -4,6 +4,6 @@ class Product < ApplicationRecord
   belongs_to :shape, :optional => true
 
   def name
-    "#{:year} #{:brand} #{:model}"
+    "#{self.year} #{self.brand} #{self.model}"
   end
 end

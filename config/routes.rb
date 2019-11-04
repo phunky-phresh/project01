@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   resources :profiles, :only => [:index, :show, :new, :create, :edit]
   resources :shapes, :only => [:index, :show, :new, :create, :edit]
-  resources :reviews
+  resources :reviews, :only => [:index, :new, :show]
 
   resources :products, :only => [:index, :show, :new, :create]
   # get 'pages/home'

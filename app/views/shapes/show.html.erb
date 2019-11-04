@@ -1,7 +1,9 @@
 <h1><%= @shape.name %> Shapes</h1>
 
 
-<% if @current_user.admin? %>
+<% if @current_user.present? %>
+  <% if @current_user.admin? %>
   <%= link_to "Edit", edit_shape_path %>
   <%= button_to "Delete #{@shape.name}", @shape, :method => 'delete', :data => {:confirm => 'Are you sure?'} %>
+  <% end %>
   <% end %>

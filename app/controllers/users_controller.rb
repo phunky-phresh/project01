@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :check_for_login, :only => [:show]
+  before_action :check_for_login, :only => [:index]
   def new
     @user = User.new
   end
@@ -14,9 +14,9 @@ class UsersController < ApplicationController
   end
   def index
     @user = User.find @current_user.id
+
   end
   def show
-    @user = User.find @current_user.id
   end
 
   private
