@@ -1,8 +1,22 @@
 <h1>Profiles#index</h1>
-<p>Find me in app/views/profiles/index.html.erb</p>
 
+<div class="row">
 <% @profiles.each do |profile| %>
-  <ul>
-    <li><%= link_to profile.name, profile %></li>
-  </ul>
+
+
+  <div class="col-md-4">
+    <div class="card mb-4">
+      <img src="<%= profile.image %>" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"><%= profile.name %></h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <%= link_to "View Profile", profile, :class => "btn btn-primary" %>
+        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+      </div>
+    </div>
+  </div>
+
+
+
 <% end %>
+</div>

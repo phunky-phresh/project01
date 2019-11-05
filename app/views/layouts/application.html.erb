@@ -14,11 +14,11 @@
       <header>
         <nav>
           |
-            <%= link_to "Home", root_path, :id => "pill-home-tab", :class => "nav-link active" %>
+            <%= link_to "Home", root_path, :class => "nav-link" %>
 
-            <%= link_to "Products", products_path, :class => "nav-link", :id => "pill-profile-tab" %>
-            <%= link_to "Profiles", profiles_path, :class => "nav-link", :id => "pill-profile-tab" %>
-            <%= link_to "Shapes", shapes_path, :class => "nav-link", :id => "pill-profile-tab" %>
+            <%= link_to "Products", products_path, :class => "nav-link" %>
+            <%= link_to "Profiles", profiles_path, :class => "nav-link" %>
+            <%= link_to "Shapes", shapes_path, :class => "nav-link" %>
           <% if @current_user.present? %>
             <!-- <li class="nav-item dropdown"> -->
               <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">User</a>
@@ -30,8 +30,8 @@
               </div>
             <!-- </li> -->
           <% else %>
-            <%= link_to "Sign Up", new_user_path %>
-            <%= link_to "Log In", login_path %>
+            <%= link_to "Sign Up", new_user_path, :class => "nav-link" %>
+            <%= link_to "Log In", login_path, :class => "nav-link" %>
           <% end %>
           |
         </nav>
