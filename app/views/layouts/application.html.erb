@@ -13,14 +13,14 @@
 
       <header>
         <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-        <a class="navbar-brand" href="#">Board Files</a>
+        <%= link_to "Board Files", products_path, :class => 'navbar-brand' %>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
+          <li class="nav-item">
             <%= link_to "Home", root_path, :class => "nav-link" %>
           </li>
           <li class="nav-item">
@@ -38,16 +38,28 @@
             <div class="dropdown-menu" aria-labelledby="dropdown01">
               <%= link_to "Add Review", new_review_path, :class => "dropdown-item" %>
               <%= link_to "My Reviews", users_path, :class => "dropdown-item" %>
-              <div class="dropdown-divider"></div>
             <% if @current_user.admin? %>
+            <div class="dropdown-divider"></div>
+
               <%= link_to "Add Shape", new_shape_path, :class => "dropdown-item" %>
               <%= link_to "Add Profile", new_profile_path, :class => "dropdown-item" %>
-              <div class="dropdown-divider"></div>
             <% end %>
-              <%= link_to "Logout", login_path, :method => 'delete', :class => "dropdown-item"  %>
+
             </div>
 
           </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <%= link_to "Logout", login_path, :method => 'delete', :class => "nav-link"  %>
+            </li>
+
+              <li class="nav-item">
+              <%= link_to  @current_user.email, '#', :class => "nav-link disabled" %>
+            </li>
+          </ul>
+
           <% else %>
 
         </ul>

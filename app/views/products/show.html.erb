@@ -25,6 +25,7 @@
         <h3 class="card-title"><%= review.title  %></h3>
           <p>Date Published: <%= review.date %></p>
           <p>Product Review: <%= review.rating %>/10</p>
+          <p><%= review.user %></p>
         <%= link_to "View Review", "/reviews/#{review.id}", :class => "btn btn-primary" %>
         </div>
       </div>
