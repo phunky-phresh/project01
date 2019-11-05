@@ -13,12 +13,20 @@
       <%= f.text_field :model, :class => 'form-control', :required => true %>
     </div>
   </div>
-  <%= f.label :shape_id %>
-  <%= f.select :shape_id, Shape.pluck(:name, :id), :include_blank => true, :required => true %>
-  <%= f.label :profile_id %>
-  <%= f.select :profile_id, Profile.pluck(:name, :id), :include_blank => true, :required => true %>
-  <%= f.label :image %>
-  <%= f.url_field :image %>
+  <div class="form-row">
+    <div class="form-group col-md-4">
+      <%= f.label :shape_id %>
+      <%= f.select :shape_id, Shape.pluck(:name, :id), :include_blank => true, :required => true %>
+    </div>
+    <div class="form-group col-md-4">
+      <%= f.label :profile_id %>
+      <%= f.select :profile_id, Profile.pluck(:name, :id), :include_blank => true, :required => true%>
+    </div>
+    <div class="form-group col-md-4">
+      <%= f.label :image %>
+      <%= f.url_field :image, :class => 'form-control' %>
+    </div>
+  </div>
 
-  <%= f.submit %>
+  <%= f.submit 'Create Board', :class => "btn btn-primary" %>
 <% end %>

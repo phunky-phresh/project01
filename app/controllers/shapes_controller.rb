@@ -1,4 +1,5 @@
 class ShapesController < ApplicationController
+  before_action :check_for_admin, :only => [:new]
   def index
     @shapes = Shape.all
   end

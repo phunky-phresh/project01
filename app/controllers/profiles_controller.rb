@@ -1,4 +1,6 @@
 class ProfilesController < ApplicationController
+  before_action :check_for_admin, :only => [:new]
+
   def index
     @profiles = Profile.all
   end

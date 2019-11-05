@@ -10,33 +10,63 @@
   </head>
 
   <body>
-    <div class="container">
-      <header>
-        <nav>
-          |
-            <%= link_to "Home", root_path, :class => "nav-link" %>
 
+      <header>
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="#">Board Files</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <%= link_to "Home", root_path, :class => "nav-link" %>
+          </li>
+          <li class="nav-item">
             <%= link_to "Products", products_path, :class => "nav-link" %>
+          </li>
+          <li class="nav-item">
             <%= link_to "Profiles", profiles_path, :class => "nav-link" %>
+          </li>
+          <li class="nav-item">
             <%= link_to "Shapes", shapes_path, :class => "nav-link" %>
+          </li>
           <% if @current_user.present? %>
-            <!-- <li class="nav-item dropdown"> -->
-              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">User</a>
-              <div class="dropdown-menu">
-                <%= link_to "Add Review", new_review_path, :class => "dropdown-item" %>
-                <%= link_to "My Reviews", users_path, :class => "dropdown-item" %>
-                <div class="dropdown-divider"></div>
-                <%= link_to "Logout", login_path, :method => 'delete', :class => "dropdown-item"  %>
-              </div>
-            <!-- </li> -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">User</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown01">
+              <%= link_to "Add Review", new_review_path, :class => "dropdown-item" %>
+              <%= link_to "My Reviews", users_path, :class => "dropdown-item" %>
+              <div class="dropdown-divider"></div>
+            <% if @current_user.admin? %>
+              <%= link_to "Add Shape", new_shape_path, :class => "dropdown-item" %>
+              <%= link_to "Add Profile", new_profile_path, :class => "dropdown-item" %>
+              <div class="dropdown-divider"></div>
+            <% end %>
+              <%= link_to "Logout", login_path, :method => 'delete', :class => "dropdown-item"  %>
+            </div>
+
+          </li>
           <% else %>
+
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <ul class="navbar-nav mr-auto">
+
+          <li class="nav-item">
             <%= link_to "Sign Up", new_user_path, :class => "nav-link" %>
+          </li>
+          <li class="nav-item">
             <%= link_to "Log In", login_path, :class => "nav-link" %>
+          </li>
+          </ul>
           <% end %>
-          |
+        </form>
+        </div>
         </nav>
       </header>
-
+<div class="container">
       <%= yield %>
   </div>
   </body>

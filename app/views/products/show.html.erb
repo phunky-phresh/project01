@@ -14,19 +14,19 @@
   </div>
 </div>
 
-
-
   <ul>
     <li>Shape: <%= link_to @products.shape.name, "/shapes/#{@products.shape.id}" %></li>
     <li>Profile: <%=link_to @products.profile.name, "/profiles/#{@products.profile.id}" %></li>
   </ul>
-  <% @products.reviews.each do |review| %>
-  <div class="review">
-    <h3><%= review.title  %></h3>
-    <ul>
-      <li><%= review.date %></li>
-      <li><%= review.rating %>/10</li>
-    </ul>
-    <p><%= review.brief %></p>
-  </div>
-  <% end %>
+
+      <% @products.reviews.each do |review| %>
+      <div class="row card">
+      <div class="card-body">
+        <h3 class="card-title"><%= review.title  %></h3>
+          <p>Date Published: <%= review.date %></p>
+          <p>Product Review: <%= review.rating %>/10</p>
+        <%= link_to "View Review", "/reviews/#{review.id}", :class => "btn btn-primary" %>
+        </div>
+      </div>
+
+      <% end %>

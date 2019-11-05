@@ -30,9 +30,8 @@ r5 = Review.create :title => 'Yes 420 review', :date => '1/11/19', :brief => 'am
 Shape.destroy_all
 s1 = Shape.create :name => 'Directional', :terrain => 'All-mountain', :image => 'https://www.burton.com/static/content/2019/images/pdp/snowboarding/diagrams/findyourshape-directional-mobile.svg', :brief => 'The classic snowboard shape, designed to be ridden with a slightly longer nose than tail to concentrate pop in the tail while still giving you plenty of float, flow, and control to rip any terrain or condition.'
 s2 = Shape.create :name => 'True Twin', :terrain => 'Freestyle', :image => 'https://www.burton.com/static/content/2019/images/pdp/snowboarding/diagrams/findyourshape-twin-mobile.svg', :brief => 'Perfectly symmetrical for a balanced ride that’s equally versatile when ridden regular or switch. Jib, spin, stomp, and butter with a greater balance of freestyle mobility and cat-like stability no matter which way you point it.'
-s3 = Shape.create :name => 'Pow-Directional', :terrain => 'Powder', :image => 'https://www.burton.com/static/content/2019/images/pdp/snowboarding/diagrams/findyourshape-twin-mobile.svg', :brief => 'Usually a wider volume shape to a traditional directional board. Powder specific directionals are generally shorter but still have a large surface area, meaning better float and more agile turns.'
-s4 = Shape.create :name => 'Tapered-twin', :terrain => 'All-Mountain Freestyle', :image => 'https://snowboardingprofiles.com/wp-content/uploads/2015/01/tapered-directional.jpg', :brief => 'A mix of directional and twin characteristics. Volume only affects deep or uneven terrain riding. slightly wider in nose than tail, but same length.'
-s5 = Shape.create :name => 'Asymetrical-Twin', :terrain => 'All-Mountain Freestyle', :image => 'https://www.snowcentral.com.au/wp-content/uploads/2017/07/assymetrical-cut.jpg', :brief => 'With asymmetrical snowboards, they tend to provide performance improvement on the carving through the incorporation of a sharper side cut at the edge of the heel. The heel side usually turns much hard to execute because of the human body natural mechanics hence the side cuts are tightened on this edge, which tightens the turning circles providing a counterbalance action.'
+s3 = Shape.create :name => 'Freeride Directional', :terrain => 'All-Mountain Freestyle', :image => 'https://www.burton.com/static/content/2019/images/pdp/snowboarding/diagrams/findyourshape-bfg-mobile.svg', :brief => 'Twin or directional is the age-old question for creative rippers like Terje. Balanced Freeride Geometry ends the debate with setback camber and a sidecut that is centered on your stance to create a twin freestyle feel when riding flat base. On edge it turns tight and quick with the float and prowess expected from a directional deck.'
+s4 = Shape.create :name => 'Asymetrical-Twin', :terrain => 'All-Mountain Freestyle', :image => 'https://www.snowcentral.com.au/wp-content/uploads/2017/07/assymetrical-cut.jpg', :brief => 'With asymmetrical snowboards, they tend to provide performance improvement on the carving through the incorporation of a sharper side cut at the edge of the heel. The heel side usually turns much hard to execute because of the human body natural mechanics hence the side cuts are tightened on this edge, which tightens the turning circles providing a counterbalance action.'
 
 Profile.destroy_all
 pf1 = Profile.create :name => 'Traditional Camber', :skill => 'Advanced', :image => 'https://www.burton.com/static/content/2019/images/pdp/snowboarding/diagrams/benddetail-camber.svg', :brief => 'The original profile. aggresive, fast, agile. not ideal for beginners'
@@ -57,7 +56,7 @@ pf1.products << p2
 pf7.products << p4 << p3
 
 puts "Product to Shape"
-s1.products << p1
+s1.products << p1 << p3
 s2.products << p2 << p4
 s3.products << p5
-s4.products << p3
+ 
