@@ -77,10 +77,8 @@ nav .user-nav {
 .card-image-product {
   height: 350px;
 }
-.card-image img {
-  vertical-align: bottom;
-  display: inline-block;
-  // height: 100%;
+.p-image {
+  max-height: 348px; 
 }
 
 @media (max-width: 1200px) {

@@ -8,11 +8,10 @@
   <div class="col-md-4">
     <div class="card mb-4">
       <div class="card-image-product">
-        <img src="<%= product.image %>" class="card-img-top" alt="...">
+        <img src="<%= product.image %>" class="card-img-top p-image " alt="...">
       </div>
       <div class="card-body">
         <h5 class="card-title"><%= product.name %></h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
         <%= link_to "View Board", "/products/#{ product.id }", :class => "btn btn-primary" %>
         <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
       </div>
