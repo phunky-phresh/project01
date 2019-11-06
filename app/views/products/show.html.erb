@@ -5,29 +5,43 @@
 <div class="jumbotron">
   <div class="col-md-4">
     <h2 class="display-4"><%= @products.name %></h2>
-    <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+
+    <p class="lead"><%= @products.brief.truncate(150) %></p>
     <hr class="my-4">
-    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-  </div>
-  <div class="col-md-4">
+
+    <p>Continue reading below.</p>
 
   </div>
 </div>
+<ul class="list-unstyled">
+  <li class="media">
+    <div class="media-body">
+      <h3 class="mt-0 mb-1">Overview</h3>
+      <p><%= @products.brief %></p>
+      <h5>Board Shape: <%= link_to @products.shape.name, "/shapes/#{@products.shape.id}" %></h5>
+      <h5>Board Profile: <%=link_to @products.profile.name, "/profiles/#{@products.profile.id}" %></h5>
+    </div>
+  </li>
+</ul>
 
-  <ul>
-    <li>Shape: <%= link_to @products.shape.name, "/shapes/#{@products.shape.id}" %></li>
-    <li>Profile: <%=link_to @products.profile.name, "/profiles/#{@products.profile.id}" %></li>
-  </ul>
+    <h3>Board Reviews</h3>
 
       <% @products.reviews.each do |review| %>
-      <div class="row card">
+    <div class="row">
+
+
       <div class="card-body">
-        <h3 class="card-title"><%= review.title  %></h3>
-          <p>Date Published: <%= review.date %></p>
-          <p>Product Review: <%= review.rating %>/10</p>
-          <p>Author: <%= review.author %></p>
-        <%= link_to "View Review", "/reviews/#{review.id}", :class => "btn btn-primary" %>
-        </div>
+        <ul class="list-unstyled">
+          <li class="media">
+            <%= link_to "View Review", "/reviews/#{review.id}", :class => "mr-3 btn btn-primary" %>
+            <div class="media-body">
+              <h5 class="mt-0 mb-1"><%= review.title %></h5>
+              <p>Date Published: <%= review.date %></p><p>Author: <%= review.author %></p>
+
+            </div>
+          </li>
+        </ul>
       </div>
 
+    </div>
       <% end %>

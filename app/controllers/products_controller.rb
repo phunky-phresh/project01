@@ -8,8 +8,12 @@ class ProductsController < ApplicationController
     @product = Product.new
   end
   def create
-    product = Product.create product_params
-    redirect_to new_review_path
+    @product = Product.create product_params
+    if @product.save
+      redirect_to new_review_path
+    else
+      render :new
+    end
   end
 
   def show
@@ -19,7 +23,7 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:brand, :model, :year, :image, :name, :shape_id, :profile_id)
+    params.require(:product).permit(:brand, :model, :year, :image, :name, :brief, :shape_id, :profile_id)
 
   end
 end
