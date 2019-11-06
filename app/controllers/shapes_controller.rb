@@ -4,11 +4,21 @@ class ShapesController < ApplicationController
     @shapes = Shape.all
   end
 
-
   def new
+    @shape = Shape.new
+  end
+  def create
+    shape = Shape.create shape_params
+    redirect_to shapes_path
   end
 
   def edit
+    @shape = Shape.find params[:id]
+  end
+  def update
+    shape = Shape.find params[:id]
+    shape.update shape_params
+    redirect_to shape_path
   end
 
   def show
@@ -18,5 +28,10 @@ class ShapesController < ApplicationController
     shape = Shape.find params[:id]
     shape.destroy
     redirect_to shapes_path
+  end
+
+  private
+  def shape_params
+    params.require(:shape).permit(:name, :terrain, :image, :brief)
   end
 end

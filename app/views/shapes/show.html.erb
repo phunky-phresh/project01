@@ -1,3 +1,10 @@
+<style media="screen">
+  .controls {
+    margin: 0 auto;
+    text-align: center
+  }
+</style>
+
 <div class="wrap">
   <div class="hero-wrap fill">
     <%= image_tag @shape.image, :class => 'hero card-img-top' %>
@@ -10,7 +17,9 @@
 
 <% if @current_user.present? %>
   <% if @current_user.admin? %>
-  <%= link_to "Edit", edit_shape_path %>
-  <%= button_to "Delete #{@shape.name}", @shape, :method => 'delete', :data => {:confirm => 'Are you sure?'} %>
+  <div class="controls ">
+    <%= link_to "Edit", edit_shape_path %>
+    <%= link_to "Delete #{@shape.name}", @shape, :method => 'delete', :data => {:confirm => 'Are you sure?'} %>
+  </div>
   <% end %>
   <% end %>
