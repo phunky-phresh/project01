@@ -1,5 +1,12 @@
-<h1><%= @shape.name %> Shapes</h1>
+<div class="wrap">
+  <div class="hero-wrap fill">
+    <%= image_tag @shape.image, :class => 'hero card-img-top' %>
+  </div>
 
+  <h2 class="display-4"><%= @shape.name %></h2>
+  <h2 class="display-5">Terrain: <%= @shape.terrain %></h2>
+  <p><%= @shape.brief %></p>
+</div>
 
 <% if @current_user.present? %>
   <% if @current_user.admin? %>

@@ -2,8 +2,13 @@ class ProductsController < ApplicationController
   # before_action :check_for_login, :only => [:index]
   def index
     @products = Product.all
-  end
 
+  end
+    def filter_by_products_shape
+      @products = Product.where(shape_id: params[:shape_id])
+      render :index
+    end
+    
   def new
     @product = Product.new
   end

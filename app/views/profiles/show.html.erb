@@ -1,2 +1,10 @@
-<h1>Profiles#show</h1>
-<p>Find me in app/views/profiles/show.html.erb</p>
+
+<div class="wrap">
+  <div class="hero-wrap fill">
+    <%= image_tag @profile.image, :class => 'hero card-img-top' %>
+  </div>
+
+  <h2 class="display-4"><%= @profile.name %></h2>
+  <h2 class="display-5">Rider level: <%= @profile.skill %></h2>
+  <p><%= @profile.brief %></p>
+</div>

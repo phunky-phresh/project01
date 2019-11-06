@@ -23,7 +23,7 @@ nav a {
 }
 
 .container {
-  margin-top: 5rem;
+  margin-top: 4rem;
 }
 #review_product_id {
     display: block;
@@ -73,7 +73,9 @@ nav a {
 .card-image {
   height: 200px;
 }
-
+// .card-body {
+//   height: 140px;
+// }
 .fill {
     display: flex;
     justify-content: center;
@@ -89,8 +91,13 @@ nav a {
   height: 350px;
 
 }
-.p-image {
-  max-height: 348px;
+.wrap {
+  max-width: 800px;
+  margin: 0 auto;
+
+}
+.hero-wrap {
+  height: 100vh;
 }
 
 @media (max-width: 1200px) {
