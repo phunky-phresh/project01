@@ -21,9 +21,6 @@
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <%= link_to "Home", root_path, :class => "nav-link" %>
-          </li>
-          <li class="nav-item">
             <%= link_to "Products", products_path, :class => "nav-link" %>
           </li>
           <li class="nav-item">
@@ -52,11 +49,10 @@
         <form class="form-inline my-2 my-lg-0">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <%= link_to "Logout", login_path, :method => 'delete', :class => "nav-link"  %>
+              <%= link_to  @current_user.username, '#', :class => "nav-link disabled" %>
             </li>
-
-              <li class="nav-item">
-              <%= link_to  @current_user.email, '#', :class => "nav-link disabled" %>
+            <li class="nav-item">
+              <%= link_to "Logout", login_path, :method => 'delete', :class => "nav-link"  %>
             </li>
           </ul>
 

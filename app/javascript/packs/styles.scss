@@ -74,11 +74,24 @@ nav .user-nav {
 .card-image {
   height: 200px;
 }
+
+.fill {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden
+}
+.fill .car-img-top {
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%
+}
 .card-image-product {
   height: 350px;
+  
 }
 .p-image {
-  max-height: 348px; 
+  max-height: 348px;
 }
 
 @media (max-width: 1200px) {

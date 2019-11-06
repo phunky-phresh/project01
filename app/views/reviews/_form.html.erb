@@ -3,6 +3,7 @@
 <div class="form-group">
   <%= f.label :title %>
   <%= f.text_field :title, :required => true, :autofocus => true, :class => 'form-control' %>
+
 </div>
 <div class="form-row">
     <div class="form-group col-md-6">
@@ -24,5 +25,7 @@
   <%= f.text_area :brief, :class => 'form-control' %>
 </div>
   <%= f.text_field :user_id, :value => @current_user.id, :type => 'hidden' %>
+  <%= f.text_field :author, :value => @current_user.username, :type => 'hidden' %>
+
   <%= f.submit 'Submit Review', :class => "btn btn-primary" %>
 <% end %>

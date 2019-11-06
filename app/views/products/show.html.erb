@@ -1,5 +1,5 @@
 <style media="screen">
-  .jumbotron {background-image: url(<%= @products.image %>); background-size: auto; background-repeat: no-repeat; background-position: top right}
+  .jumbotron {background-image: url(<%= @products.image %>); background-size: contain; background-repeat: no-repeat; background-position: top right}
 </style>
 
 <div class="jumbotron">
@@ -25,7 +25,7 @@
         <h3 class="card-title"><%= review.title  %></h3>
           <p>Date Published: <%= review.date %></p>
           <p>Product Review: <%= review.rating %>/10</p>
-          <p><%= review.user %></p>
+          <p>Author: <%= review.author %></p>
         <%= link_to "View Review", "/reviews/#{review.id}", :class => "btn btn-primary" %>
         </div>
       </div>
