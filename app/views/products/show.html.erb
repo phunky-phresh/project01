@@ -16,6 +16,19 @@
       max-width: 100%;
     }
   }
+  .review-card {
+
+  }
+  .review-card * {
+    display: inline-block;
+  }
+  .media-body * {
+    margin-right: 10px;
+  }
+  .review-head3 {
+    display: inline-block;
+    margin: 20px auto;
+  }
 </style>
 <div class="product-wrap fill">
   <%= image_tag @products.image, :class => 'hero card-img-top' %>
@@ -35,31 +48,43 @@
   <li class="media">
     <div class="media-body">
       <h3 class="mt-0 mb-1">Overview</h3>
-      <p><%= @products.brief %></p>
       <h5>Board Shape: <%= link_to @products.shape.name, "/shapes/#{@products.shape.id}" %></h5>
       <h5>Board Profile: <%=link_to @products.profile.name, "/profiles/#{@products.profile.id}" %></h5>
+
+      <p><%= @products.brief %></p>
     </div>
   </li>
 </ul>
-
-    <h3>Board Reviews</h3>
+<hr class="my-4">
+    <h3 class="review-head3">Board Reviews</h3>     <%= link_to "Add a Review", new_review_path %>
 
       <% @products.reviews.each do |review| %>
-    <div class="row">
+    <div class="review-row">
 
 
-      <div class="card-body">
-        <ul class="list-unstyled">
-          <li class="media">
-            <%= link_to "View Review", "/reviews/#{review.id}", :class => "mr-3 btn btn-primary" %>
+      <div class="review-card">
+
+
+            <%# <%= link_to "View Review", "/reviews/#{review.id}", :class => "mr-3 btn btn-primary" %>
             <div class="media-body">
-              <h5 class="mt-0 mb-1"><%= review.title %></h5>
+              <a href=<%= "/reviews/#{review.id}" %>>
+                <h5 class="mt-0 mb-1"><%= review.title %></h5>
+              </a>
               <p>Date Published: <%= review.date %></p><p>Author: <%= review.author %></p>
 
             </div>
-          </li>
-        </ul>
+
       </div>
 
     </div>
+
       <% end %>
+      <% if @current_user.present? %>
+        <% if @current_user.admin? %>
+        <div class="controls ">
+          <%= link_to "Edit", edit_product_path %>
+          |
+          <%= link_to "Delete #{@products.name}", @products, :method => 'delete', :data => {:confirm => 'Are you sure?'} %>
+        </div>
+        <% end %>
+        <% end %>

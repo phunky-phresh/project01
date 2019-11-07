@@ -8,7 +8,7 @@ class ProductsController < ApplicationController
       @products = Product.where(shape_id: params[:shape_id])
       render :index
     end
-    
+
   def new
     @product = Product.new
   end
@@ -21,8 +21,23 @@ class ProductsController < ApplicationController
     end
   end
 
+  def edit
+    @product = Product.find params[:id]
+  end
+  def update
+    product = Product.find params[:id]
+    product.update product_params
+    redirect_to product_path
+  end
+
   def show
     @products = Product.find params[:id]
+  end
+
+  def destroy
+    product = Product.find params[:id]
+    product.destroy
+    redirect_to products_path
   end
 
   private

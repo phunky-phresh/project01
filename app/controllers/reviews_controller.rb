@@ -9,7 +9,7 @@ class ReviewsController < ApplicationController
   def create
     #need tob build create page.
     review = Review.create review_params
-    redirect_to root_path
+    redirect_to products_path
   end
 
   def edit

@@ -30,10 +30,10 @@ p13 = Product.create :brand => 'Capita', :model => 'Kazu Kokubo', :year => '2019
 
 
 Review.destroy_all
-r1 = Review.create :title => 'Deep Thinker Review', :date => '1/11/19', :brief => 'Great board. super fast. agile. hard turning', :rating => '9', :author => 'admin'
-r2 = Review.create :title => 'Huck Knife review', :date => '10/11/19', :brief => 'fun in the park. super fast. agile. hard turning', :rating => '9', :author => 'admin'
-r3 = Review.create :title => 'Burton Deep Thinker', :date => '1/10/19', :brief => 'too much to handle. super fast. agile. hard turning', :rating => '9', :author => 'admin'
-r4 = Review.create :title => 'Salomon First Call', :date => '1/9/19', :brief => 'versitile. super fast. agile. hard turning', :rating => '9', :author => 'joe'
+r1 = Review.create :title => 'Deep Thinker Review', :date => '1/11/19', :brief => 'Great board. super fast. agile. hard turning', :rating => '4', :author => 'admin'
+r2 = Review.create :title => 'Huck Knife review', :date => '10/11/19', :brief => 'fun in the park. super fast. agile. hard turning', :rating => '4', :author => 'admin'
+r3 = Review.create :title => 'Burton Deep Thinker', :date => '1/10/19', :brief => 'too much to handle. super fast. agile. hard turning', :rating => '3', :author => 'admin'
+r4 = Review.create :title => 'Salomon First Call', :date => '1/9/19', :brief => 'versitile. super fast. agile. hard turning', :rating => '4', :author => 'joe'
 r5 = Review.create :title => 'Yes 420 review', :date => '1/11/19', :brief => 'amazing powder board', :rating => '7', :author => 'joe'
 
 Shape.destroy_all
