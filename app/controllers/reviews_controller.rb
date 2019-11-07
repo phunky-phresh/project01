@@ -1,6 +1,7 @@
 class ReviewsController < ApplicationController
   before_action :check_for_login, :only => [:new]
   def index
+    redirect_to root_path
   end
 
   def new

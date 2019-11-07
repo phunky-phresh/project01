@@ -8,8 +8,8 @@ class Product < ApplicationRecord
       message: " Already Exists" }
 
   include PgSearch::Model
-  pg_search_scope :search_by_brand_model, against: [:brand, :model, :profile_id]
-
+  pg_search_scope :search_by_brand_model, against: [:brand, :model, :profile_id],
+                  :associated_against => {:profile => :name, :shape => :name}
     def name
       "#{self.year} #{self.brand} #{self.model}"
     end
