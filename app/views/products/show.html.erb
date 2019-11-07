@@ -1,9 +1,27 @@
 <style media="screen">
-  .jumbotron {background-image: url(<%= @products.image %>); background-size: contain; background-repeat: no-repeat; background-position: top right}
+  .jumbotron {
+    background-image: url(<%= @products.image %>);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top right;
+  }
+  @media (max-width: 991px) {
+    .jumbotron {
+      background-image: none;
+    }
+    .product-wrap {
+      display: inherit;
+    }
+    .col-md-6 {
+      max-width: 100%;
+    }
+  }
 </style>
-
+<div class="product-wrap fill">
+  <%= image_tag @products.image, :class => 'hero card-img-top' %>
+</div>
 <div class="jumbotron">
-  <div class="col-md-4">
+  <div class="col-md-6">
     <h2 class="display-4"><%= @products.name %></h2>
 
     <p class="lead"><%= @products.brief.truncate(150) %></p>

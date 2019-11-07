@@ -14,8 +14,7 @@ u2 = User.create :email => 'joebro@joe.com', :password => 'chicken', :username =
 
 Product.destroy_all
 p1 = Product.create :name => '2020 Burton Deep Thinker', :brand => 'Burton', :model => 'Deep Thinker', :year => '2020', :image => 'https://images.evo.com/imgp/700/162077/657219/clone.jpg', :brief => "Open your mind with Danny Davis' new take on extra-poppy, pow-friendly performance. The Burton Deep Thinker is a directional spin on Danny Davis' go-to for hot laps in the park, pipe, or mobbing side hits across the mountain. Adding the float and responsiveness of Directional Camber to a unique shape designed with Balanced Freeride Geometry and just a touch of taper ups the all-mountain abilities while keeping the freestyle performance on full blast. 45° Carbon Highlights deliver snappy pop without the stiff side effects. Throwback graphics top it off, adding a touch of Burton's early 90's roots to an already iconic model."
-p2 = Product.create :name => '2020 Salomon Huck Knife', :brand => 'Salomon', :model => 'Huck Knife', :year => '2020', :image => 'https://images.evo.com/imgp/700/161947/641530/clone.jpg', :brief => "This true park board with a classic blunt shape was conceived to handle whatever you could throw at it. The mix of precision, response, and forgiveness gives versatile flex capabilities. Ready for side hits, park jumps, rails, tree jibs, and endless tricks.
-"
+p2 = Product.create :name => '2020 Salomon Huck Knife', :brand => 'Salomon', :model => 'Huck Knife', :year => '2020', :image => 'https://images.evo.com/imgp/700/161947/641530/clone.jpg', :brief => "This true park board with a classic blunt shape was conceived to handle whatever you could throw at it. The mix of precision, response, and forgiveness gives versatile flex capabilities. Ready for side hits, park jumps, rails, tree jibs, and endless tricks."
 p3 = Product.create :name => '2019 Salomon First Call', :brand => 'Salomon', :model => 'First Call', :year => '2019', :image => 'https://cdn.shopify.com/s/files/1/1022/9437/products/FirstCall162.jpg?v=1560808575', :brief => "Wolfgang Nyvelt shaped each board size to deliver specific benefits for freestyle riding, tight creative turns, park, or on big jumps. A Tapered Twin with Rock Out Camber for pop and float in any condition."
 p4 = Product.create :name => '2017 Yes. Jackpot', :brand => 'Yes.', :model => 'Jackpot', :year => '2017', :image => 'https://images.evo.com/imgp/700/105605/457957/yes-jackpot-snowboard-2017-.jpg', :brief => "The Jackpot introduced the original MidBite outline 3 years ago that has since trickled throughout the line whenever a new or updated Twin is on the roster. This new Jackpot features a wider overall platform and new MidBite/sidecut ratios to suit the ever-advancing park and pipe environment. As the Jackpot is designed primarily as a park/resort board we've developed a unique tip and tail profile that employs a sharper transition off the contact points to a flatter, more drawn out kick."
 p5 = Product.create :name => '2017 Yes. 420', :brand => 'Yes.', :model => '420', :year => '2017', :image => 'https://images.evo.com/imgp/700/105600/457931/yes-420-snowboard-2017-.jpg', :brief => "This board is all about surface area displacement to create float and stability in a package that has much less swing-weight due to its dramatically shortened length. A tight turning radius facilitates tree-bound powder hunts and a custom crafted rocker line keeps the nose up at any speed. Often copied, but never duplicated, there’s only one 420."
@@ -62,7 +61,8 @@ u1.reviews << r1 << r2 << r3
 u2.reviews << r4 << r5
 puts "Reviews to Products"
 p1.reviews << r1 << r3
-
+p2.reviews << r2
+p3.reviews << r4
 puts "Product to Profile"
 pf1.products << p2 << p6 << p13
 pf2.products << p1 << p7 << p8 << p12

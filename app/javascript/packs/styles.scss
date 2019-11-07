@@ -99,7 +99,18 @@ nav a {
 .hero-wrap {
   height: 100vh;
 }
-
+.product-wrap {
+  height:50%;
+  display: none;
+}
+.controls {
+  margin: 0 auto;
+  text-align: center
+}
+.wrapper-log {
+  max-width: 800px;
+  margin: 0 auto;
+}
 @media (max-width: 1200px) {
   .card-image-product {
     height: 290px;

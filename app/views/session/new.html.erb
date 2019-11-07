@@ -1,19 +1,28 @@
-<h1>Log In</h1>
 
-<% if flash[:error].present? %>
-  <p><%= flash[:error] %></p>
-<% end  %>
-<%# Use a form tag when its not a CRUD system %>
+<div class="wrapper-log">
+  <div class="form-group">
+    <div class="form ">
+      <h1>Log In</h1>
 
-<%= form_tag login_path do %>
-<div class="form-group col-md-6">
-  <%= label_tag :email %>
-  <%= email_field_tag :email, nil, :class => 'form-control' %>
+      <% if flash[:error].present? %>
+        <p><%= flash[:error] %></p>
+      <% end  %>
+      <%# Use a form tag when its not a CRUD system %>
+
+      <%= form_tag login_path do %>
+      <div class="form-group ">
+        <%= label_tag :email %>
+        <%= email_field_tag :email, nil, :class => 'form-control' %>
+      </div>
+      <div class="form-group ">
+        <%= label_tag :password %>
+        <%= password_field_tag :password, nil, :class => 'form-control' %>
+      </div>
+
+        <%= submit_tag 'Sign In', :class => 'btn btn-primary' %>
+      <% end %>
+
+    </div>
+  </div>
+
 </div>
-<div class="form-group col-md-6">
-  <%= label_tag :password %>
-  <%= password_field_tag :password, nil, :class => 'form-control' %>
-</div>
-
-  <%= submit_tag 'Sign In', :class => 'btn btn-primary' %>
-<% end %>

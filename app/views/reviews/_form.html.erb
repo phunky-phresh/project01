@@ -7,13 +7,13 @@
 </div>
 <div class="form-row">
     <div class="form-group col-md-6">
-      <%= f.label :product_id %>
+      <%= f.label "Select a Board" %>
         <%= f.select :product_id, Product.all.map{ |p| [p.name, p.id]}, :include_blank => true, :required => true %>
     <%= link_to 'Add Board', new_product_path, :id => 'add-board' %>
     </div>
     <div class="form-group col-md-4">
       <%= f.label :date %>
-      <%= f.number_field :date, :class => 'form-control' %>
+      <input class="form-control" type="date" name="date" value="">
     </div>
     <div class="form-group col-md-2">
       <%= f.label :rating %>
