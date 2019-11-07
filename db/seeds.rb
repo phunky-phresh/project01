@@ -30,11 +30,15 @@ p13 = Product.create :brand => 'Capita', :model => 'Kazu Kokubo', :year => '2019
 
 
 Review.destroy_all
-r1 = Review.create :title => 'Deep Thinker Review', :date => '1/11/19', :brief => 'Great board. super fast. agile. hard turning', :rating => '4', :author => 'admin'
-r2 = Review.create :title => 'Huck Knife review', :date => '10/11/19', :brief => 'fun in the park. super fast. agile. hard turning', :rating => '4', :author => 'admin'
-r3 = Review.create :title => 'Burton Deep Thinker', :date => '1/10/19', :brief => 'too much to handle. super fast. agile. hard turning', :rating => '3', :author => 'admin'
-r4 = Review.create :title => 'Salomon First Call', :date => '1/9/19', :brief => 'versitile. super fast. agile. hard turning', :rating => '4', :author => 'joe'
-r5 = Review.create :title => 'Yes 420 review', :date => '1/11/19', :brief => 'amazing powder board', :rating => '7', :author => 'joe'
+r1 = Review.create :title => 'Deep Thinker Review', :date => '1/11/19', :brief => 'GOn Snow Feel/Ability Level/Skidded Turns: Not for those that don’t know how to turn. It’s more for those expert riders but advanced riders can handle it too but if you get off your game it can catch an edge pretty easy. It’s pretty close to a full-on old-school camber ride and doesn’t skid turns easy. It has a very aggressive pretty directional gunny type of ride that appeals to those that just don’t fuck around when the head up to the mountain.
+Edge Hold: Pretty standard for Burton. It’s good in comparison to most of their line but when we compare it to many similar boards out there the edge hold is a little behind most in harder snow. It can still hang in harder snow but it has this quick cut off point grip wise when the snow gets harder that can surprise you and quickly let go.', :rating => '4', :author => 'admin'
+r2 = Review.create :title => 'Huck Knife review', :date => '10/11/19', :brief => "The Huck Knife rides exactly the way I expected it to (in a good way). It's the tried and true park board formula with positive camber and a twin shape. I ride the 155cm size. I'm a very experienced rider who weighs 155lbs and I am 5'9 tall. Salomon's Quad Camber profile works great! I have all of the pop and edge hold of camber but the board doesn't feel catchy at all when cruising fast or spinning off the lip of jumps.", :rating => '4', :author => 'admin'
+r3 = Review.create :title => 'Burton Deep Thinker', :date => '1/10/19', :brief => 'The topsheet of the Deep Thinker makes you feel like you are wearing a brand new jacket from JD sports, with all the blue and yellow trimmings – whether that’s a good or bad thing is up to you really…
+
+Aesthetics aside, when I came to ride the Deep thinker it was strong and powerful on the piste. It also had an element of agility that I couldn’t ignore when it came to riding the fresh snow we had been graced with that week.', :rating => '3', :author => 'admin'
+r4 = Review.create :title => 'Salomon First Call', :date => '1/9/19', :brief => 'The First Call was softer than I’d expected, without feeling so loose that I’d lose any performance along the way. Being a tapered twin and using Salomon’s Rock Out Camber profile, you really get the benefit of a freestyle-feeling ride.
+This would allow for those tight creative turns through the trees, playing off little hits along the way. I found the nose was super surfy, offering float from powder through to slushier conditions later in the season. The added flex of this board really allows for versatility across a range of conditions, and I’d be hard pressed to find something this board couldn’t handle.', :rating => '4', :author => 'joe'
+r5 = Review.create :title => 'Yes 420 review', :date => '1/11/19', :brief => "Very fun short board. I'm 5'8 and took the takes a bit to initiate turns with a wider waist. Grippy once on edge when on groomers but once your're in some soft stuff it floats well. This is made to ride short (I rode the 148) and sets you up to feel like your're slashing the coping on a skateboard when turning. If anything I'd like it to be a bit narrower for my 8.5 boots but for powder it was awesome. When it comes down to it this board navigates through trees amazingly with the short tail.", :rating => '5', :author => 'joe'
 
 Shape.destroy_all
 s1 = Shape.create :name => 'Directional', :terrain => 'All-mountain', :image => 'https://www.burton.com/static/content/2019/images/pdp/snowboarding/diagrams/findyourshape-directional-mobile.svg', :brief => 'The classic snowboard shape, designed to be ridden with a slightly longer nose than tail to concentrate pop in the tail while still giving you plenty of float, flow, and control to rip any terrain or condition.'
@@ -63,6 +67,7 @@ puts "Reviews to Products"
 p1.reviews << r1 << r3
 p2.reviews << r2
 p3.reviews << r4
+p5.reviews << r5
 puts "Product to Profile"
 pf1.products << p2 << p6 << p13
 pf2.products << p1 << p7 << p8 << p12

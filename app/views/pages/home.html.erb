@@ -1,3 +1,20 @@
+<style media="screen">
+  .landing-link {
+    display: inline-block;
+    margin: 1rem;
+    text-decoration: none;
+  }
+  .landing-link a {
+    color: white;
+
+  }
+  .landing-controls {
+    margin: 1rem;
+    text-align: center;
+
+  }
+</style>
+
 <div class="wrap">
   <h1>the Board files</h1>
 
@@ -9,8 +26,10 @@
   <hr class="my-4">
 
   <h4>Here are two key features that, believe it or not, make certain styles of riding easier, or are genuinely effected by the riders experience and intention.</h4>
-  <h5><%= link_to 'Snowboard Profiles', profiles_path %></h5>
-  <h5><%= link_to 'Snowboard Shapes', shapes_path %></h5>
+  <div class="landing-controls">
+    <h5 class="landing-link btn btn-primary"><%= link_to 'Snowboard Profiles', profiles_path %></h5>
+    <h5 class="landing-link btn btn-primary"><%= link_to 'Snowboard Shapes', shapes_path %></h5>
+  </div>
 
 
 </div>

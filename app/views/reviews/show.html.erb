@@ -1,13 +1,17 @@
-<h1><%= @review.title %></h1>
-  <h2><%= @review.product_id %></h2>
-<h2><%= @review.date %></h2>
-<h2><%= @review.rating %></h2>
+<div class="wrap">
+  <h1><%= @review.title %></h1>
+    <h4>Author: <%= @review.author %></h4>
+    <h4>Published: <%= @review.date %></h4>
+    <h4>Rating: <%= @review.rating %>/5</h4>
 
-<p><%= @review.brief %></p>
+    <p><%= @review.brief %></p>
 
 
-
-<div class="controls">
-  <%= link_to "edit Review", edit_review_path %>
-  <%= button_to "Delete", @review, :method => 'delete', :data => {:confirm => 'Are you sure?'} %>
+  <% if @current_user.present? && @current_user.id == @review.user_id%>
+  <div class="controls">
+    <%= link_to "Edit Review", edit_review_path %>
+    |
+    <%= link_to "Delete", @review, :method => 'delete', :data => {:confirm => 'Are you sure?'} %>
+  </div>
+  <% end %>
 </div>

@@ -1,6 +1,26 @@
 @import '~bootstrap/scss/bootstrap';
-
-
+.navbar  {
+  background-color: #ff675c;
+}
+.my-4 {
+  border-top: 1px solid #ff675c;
+}
+.btn-primary {
+  background-color: #ff675c;
+  border-color: #ff675c;
+}
+.btn-primary:hover {
+  background-color: #ff675c;
+  border-color: #ff675c;
+  text-decoration: underline;
+}
+a {
+  color: #ff675c;
+}
+a:hover {
+  color: #ff675c;
+  text-decoration: underline;
+}
 .nav-link{
   display: inline;
 }
