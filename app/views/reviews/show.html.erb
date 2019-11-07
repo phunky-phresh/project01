@@ -1,8 +1,16 @@
+<style media="screen">
+  .top {
+    margin: 2rem auto;
+  }
+</style>
 <div class="wrap">
   <h1><%= @review.title %></h1>
+  <div class="top">
+    <h4>Visit Snowboard: <%= link_to "here" ,"/products/#{@review.product_id}" %></h4>
     <h4>Author: <%= @review.author %></h4>
     <h4>Published: <%= @review.date %></h4>
     <h4>Rating: <%= @review.rating %>/5</h4>
+  </div>
 
     <p><%= @review.brief %></p>
 
