@@ -1,13 +1,21 @@
 class ProductsController < ApplicationController
   # before_action :check_for_login, :only => [:index]
+
   def index
     @products = Product.all
 
-  end
-    def filter_by_products_shape
-      @products = Product.where(shape_id: params[:shape_id])
-      render :index
+    if params[:query].present?
+      search_results = Product.search_by_brand_model(params[:query])
+      if search_results.empty?
+       @products = Product.all
+       @message = "no results"
+      else
+        @products = search_results
+      end
     end
+
+  end
+
 
   def new
     @product = Product.new

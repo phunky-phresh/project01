@@ -1,6 +1,12 @@
 <h1>Snowboard List</h1>
+<p><%= @message %></p>
+<%= form_tag products_path, method: :get do %>
+  <p>
+    <%= text_field_tag :query, params[:query] %>
+    <%= submit_tag "Search", name: nil %>
+  </p>
 
-
+<% end %>
 <div class="row">
 <% @products.each do |product| %>
 
