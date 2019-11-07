@@ -1,26 +1,28 @@
 <%= form_for @review do |f| %>
 
-<div class="form-group">
+<div class="form-group" data-intro = "Give your new review a title!">
   <%= f.label :title %>
   <%= f.text_field :title, :required => true, :autofocus => true, :class => 'form-control' %>
 
 </div>
 <div class="form-row">
-    <div class="form-group col-md-6">
+    <div class="form-group col-md-6" data-intro = "Add the board you want to review!">
       <%= f.label "Select a Board" %>
         <%= f.select :product_id, Product.all.map{ |p| [p.name, p.id]}, :include_blank => true, :required => true %>
-    <%= link_to 'Add Board', new_product_path, :id => 'add-board' %>
+        <div data-intro = "If you can't find the Board you want to review, add it to our site!">
+          <%= link_to 'Add Board', new_product_path, :id => 'add-board'  %>
+        </div>
     </div>
-    <div class="form-group col-md-4">
+    <div class="form-group col-md-4" data-intro = "When did you test the Board?">
       <%= f.label :date %>
       <input class="form-control" type="date" name="date" value="">
     </div>
-    <div class="form-group col-md-2">
+    <div class="form-group col-md-2" data-into = "Give the board a Rating out of 5">
       <%= f.label 'Rating' %>
       <%= f.number_field :rating, :class => 'form-control', :max => '5' %>
     </div>
   </div>
-<div class="form-group">
+<div class="form-group" data-intro = "Provide a brief review on the board. This can include pros, cons, conditions and more!">
   <%= f.label :brief %>
   <%= f.text_area :brief, :class => 'form-control' %>
 </div>

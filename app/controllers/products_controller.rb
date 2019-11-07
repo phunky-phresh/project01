@@ -8,7 +8,7 @@ class ProductsController < ApplicationController
       search_results = Product.search_by_brand_model(params[:query])
       if search_results.empty?
        @products = Product.all
-       @message = "no results"
+       @message = "No Results"
       else
         @products = search_results
       end

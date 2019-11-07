@@ -67,9 +67,7 @@
 
             <%# <%= link_to "View Review", "/reviews/#{review.id}", :class => "mr-3 btn btn-primary" %>
             <div class="media-body">
-              <a href=<%= "/reviews/#{review.id}" %>>
-                <h5 class="mt-0 mb-1"><%= review.title %></h5>
-              </a>
+                <h5><%= link_to review.title, "/reviews/#{review.id}" %></h5>
               <p>Date Published: <%= review.date %></p><p>Author: <%= review.author %></p>
 
             </div>
