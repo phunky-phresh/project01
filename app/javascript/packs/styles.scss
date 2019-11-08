@@ -87,15 +87,18 @@ nav a {
   border: 1px solid #ced4da;
   border-radius: 0.25rem;
 }
+#query {
+  border-radius: 5px;
+  border: 1px solid #ff675c;
+  padding: 6px;
+}
 .review-section {
   background-color: gray;
 }
 .card-image {
   height: 200px;
 }
-// .card-body {
-//   height: 140px;
-// }
+
 .fill {
     display: flex;
     justify-content: center;

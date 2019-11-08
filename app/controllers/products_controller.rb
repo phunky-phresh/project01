@@ -3,7 +3,8 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.all
-
+    #this method produces the search results on the product index.
+    # if there are no results, it spits out an error message and loads Product.all
     if params[:query].present?
       search_results = Product.search_by_brand_model(params[:query])
       if search_results.empty?

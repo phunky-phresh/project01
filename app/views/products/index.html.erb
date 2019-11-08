@@ -1,9 +1,10 @@
+
 <h1>Snowboard List</h1>
 <p><%= @message %></p>
 <%= form_tag products_path, method: :get do %>
-  <p>
-    <%= text_field_tag :query, params[:query] %>
-    <%= submit_tag "Search", name: nil %>
+  <p id = 'search' data-intro = "Search by brand, model, shape or profile!">
+    <%= text_field_tag :query, params[:query] , :placeholder => 'search list' %>
+    <%= submit_tag "Search", :class => "btn btn-primary", name: nil %>
   </p>
 
 <% end %>
@@ -28,3 +29,6 @@
 
 <% end %>
 </div>
+<script type="text/javascript">
+  introJs().start();
+</script>
